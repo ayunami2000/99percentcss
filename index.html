@@ -25,13 +25,11 @@ header{position:-webkit-sticky;position:sticky;top:-3em;z-index:99999;padding:0;
 header h1{font-size:1.5rem;line-height:2em;text-align:center;padding:0;height:2em;z-index:150;}
 </style>
 <script>
-var ifr,navlinks=[null,"home.html","despacito.html","about.html"];
-function nav(el){if(el.id!="navbackbtn")window.location.href=el.innerHTML.toLowerCase().replace(/\s/g,"-")+".html";}
 window.onload=()=>setTimeout(()=>document.body.removeAttribute("style"),500);
 </script>
 </head>
 <body style="opacity:0;pointer-events:none;">
-<header onclick="if(['button','li'].includes(event.target.tagName.toLowerCase()))nav(event.target);">
+<header onclick="if(['button','li'].includes(event.target.tagName.toLowerCase())&&event.target.id!="navbackbtn")window.location.href=event.target.innerHTML.toLowerCase().replace(/\s/g,'-')+'.html';">
 <h1>aids</h1>
 <button id="navbtn">&equiv;</button>
 <button>Home</button>

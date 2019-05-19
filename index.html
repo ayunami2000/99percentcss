@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>99percentcss</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<style>
+*{padding:0;margin:0;transition:all .25s ease;border:0;color:gray;font-family:sans-serif;}
+button:hover{transform:scale(1.25,1.25);}
+header button{box-shadow:0 0 .5em #888;margin:.5em;height:2em;font-weight:bold;cursor:pointer;background-color:white;border-radius:1em;outline:0!important;}
+#navbtn{z-index:10000;width:2em;}
+header button:active{box-shadow:0 0 .4375em #888;transform:scale(.875,.875);}
+#navbtn:focus{opacity:0;transform:translateX(calc(-100% - 1em));}
+header button:not(#navbtn){padding:0 .5em;}
+header button:hover{box-shadow:0 0 .625em #888;}
+header button:not(#navbtn):active{opacity:0;}
+#navbtn:focus ~ #navmenu{transform:translateX(0);opacity:1;}
+#navmenu{transform:translateX(-100%);opacity:0;display:block;position:-webkit-sticky;position:relative;top:-2.5em;height:100vh;width:75vmin;background-color:gray;z-index:9999;padding:0;margin:0;}
+#navmenu li{color:lightgray;cursor:pointer;padding:calc(11em / 18);margin:0;font-size:1.125em;line-height:1em;}
+#navmenu li:hover{color:white;background-color:darkgray;}
+body{background-color:lightgray;z-index:2;min-height:100vh;}
+html{background:url(http://id0t.x10.mx/dl/IMG_1497.GIF) no-repeat center center,lightgray;background-size:5em;height:100vh;z-index:1;}
+content{z-index:60;padding:.5em;width:calc(100% - 1em);min-height:calc(100% - 2.5em);position:absolute;top:4.5em;left:0;right:0;bottom:0;}
+p{white-space:pre-wrap;width:100vmin;padding-bottom:.5em;}
+header{position:-webkit-sticky;position:sticky;top:-3em;z-index:99999;padding:0;width:100%;height:5.5em;background-color:white;opacity:.75;}
+header h1{font-size:1.5rem;line-height:2em;text-align:center;padding:0;height:2em;z-index:150;}
+</style>
+<script>
+var ifr,navlinks=[null,"home.html","despacito.html","about.html"];
+function nav(el){
+if(el.tagName=="button")return window.location.href=el.innerHTML.toLowerCase().replace(/\s/g,"-")+".html";
+var indx=Array.from(el.parentElement.children).indexOf(el);
+if(el.tagName.toLowerCase()=="li"&&navlinks.length>indx&&navlinks[indx]!=null)window.location.href=navlinks[indx];
+}
+window.onload=()=>setTimeout(()=>document.body.style.opacity=1,500);
+</script>
+</head>
+<body style="opacity:0;">
+<header>
+<h1>aids</h1>
+<button id="navbtn">&equiv;</button>
+<button onclick="nav(this);">Home</button>
+<button onclick="nav(this);">Despacito</button>
+<button onclick="nav(this);">About</button>
+<ul id="navmenu" onclick="nav(event.target)">
+<li>&larr;</li>
+<li>Home</li>
+<li>Despacito</li>
+<li>About</li>
+</ul>
+</header>
+<content>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus purus quis molestie commodo. Pellentesque massa arcu, facilisis at luctus non, tincidunt vel augue. Mauris accumsan id est et pharetra. Morbi accumsan mi in cursus dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer feugiat, augue at tempus lacinia, ipsum leo auctor leo, sed faucibus turpis nibh ut urna. Nam quis vehicula justo. Curabitur mollis dapibus neque eu finibus. Aliquam neque nibh, hendrerit vitae semper id, egestas ac felis. In ac est in lectus dictum egestas.
+
+Sed quis fermentum sem. Proin nec libero lectus. Suspendisse porta nec enim eu elementum. Phasellus vitae purus congue, suscipit tellus et, egestas ipsum. Curabitur aliquet diam vitae diam rhoncus pharetra. Duis a massa ullamcorper, euismod nunc id, accumsan nibh. Etiam commodo erat sed aliquet suscipit. Aliquam et enim enim. Pellentesque sit amet ligula ut diam euismod lobortis. Aenean aliquet, turpis vel rutrum semper, justo odio hendrerit odio, ac fermentum eros mauris vitae felis. Quisque tincidunt posuere ornare. Suspendisse convallis quis urna a tincidunt. Pellentesque egestas eros non suscipit dapibus.
+
+Duis rhoncus dolor id urna euismod, eget semper neque blandit. Nunc tincidunt risus non vestibulum vehicula. Vivamus faucibus, diam a venenatis varius, purus eros vulputate nunc, in imperdiet arcu ante et nisl. Mauris semper ornare ex quis dictum. Vivamus arcu nulla, ultricies ac vestibulum at, cursus non ipsum. Aenean condimentum ullamcorper mi, eu vehicula metus ultrices at. Vivamus lacinia condimentum massa vitae tincidunt. Praesent lobortis mi mi. Integer in enim sem. Vivamus vel augue et justo eleifend pellentesque lacinia vel diam. Integer elementum magna id nisl mollis egestas. Nulla venenatis sapien vitae augue dignissim tincidunt. Donec sagittis diam in lectus convallis pretium. Nullam nec ullamcorper tellus.
+
+Donec vel consectetur ipsum, sit amet aliquam diam. Etiam dui quam, varius eu eros ac, placerat maximus sem. Morbi tristique, quam eu porttitor luctus, lectus risus auctor elit, nec malesuada urna libero at augue. Sed vitae eros lectus. Quisque velit diam, ultrices id fringilla eu, volutpat sit amet tortor. In placerat, orci vitae auctor porttitor, justo lectus scelerisque massa, sit amet porttitor mi massa non tortor. Sed volutpat in sem ac fringilla. Proin dictum tellus nisi, egestas ultricies ex gravida eget. Proin magna lacus, rutrum vitae sem vel, egestas lobortis massa. Ut finibus, lectus non condimentum euismod, dui ante bibendum orci, vitae vulputate ante lectus in diam. Suspendisse rutrum fringilla tellus vitae blandit. Sed pharetra est eu ex fermentum, vel dapibus neque laoreet.
+
+Etiam ultrices fermentum sodales. Praesent interdum nisl eu tempor finibus. In hac habitasse platea dictumst. Nam ullamcorper commodo orci, ac consectetur ante mollis vel. Etiam eu felis ornare turpis pellentesque laoreet. Vivamus id tristique arcu. Integer id orci dapibus, porttitor eros non, ultrices neque. Quisque eget tristique elit, sit amet dictum ex. Maecenas non vulputate augue, ac ultrices eros. Fusce condimentum lacus et fermentum laoreet. Ut nec tellus ligula. Vestibulum a turpis risus. Pellentesque feugiat cursus arcu euismod cursus. Cras gravida nunc erat. Quisque sit amet nibh sed risus eleifend convallis eget in felis.
+</p>
+</content>
+</body>
+</html>

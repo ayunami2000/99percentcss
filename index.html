@@ -26,9 +26,9 @@ header h1{font-size:1.5rem;line-height:2em;text-align:center;padding:0;height:2e
 <script>window.onload=()=>setTimeout(()=>document.body.removeAttribute("style"),250);</script>
 </head>
 <body style="opacity:0;pointer-events:none;" ontouchstart onmousedown>
-<header onclick="if(['button','li'].includes(event.target.tagName.toLowerCase()))window.location.href=event.target.innerHTML.toLowerCase().replace(/\s/g,'-')+'.html';">
+<header onclick="if(['button','li'].includes(event.target.tagName.toLowerCase())&&!['navbackbtn','navbtn'].includes(event.target.id))window.location.href=event.target.innerHTML.toLowerCase().replace(/\s/g,'-')+'.html';">
 <h1>99percentcss</h1>
-<button onclick="event.stopPropagation();this.focus();">&equiv;</button>
+<button id="navbtn">&equiv;</button>
 <button>Home</button>
 <button>Despacito</button>
 <button>About</button>

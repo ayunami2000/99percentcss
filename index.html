@@ -27,14 +27,17 @@ header h1{font-size:1.5rem;line-height:2em;text-align:center;padding:0;height:2e
 <script>
 var ifr,navlinks=[null,"home.html","despacito.html","about.html"];
 function nav(el){
+if(el.id!="navbackbtn")window.location.href=el.innerHTML.toLowerCase().replace(/\s/g,"-")+".html";
+/*
 if(el.tagName.toLowerCase()=="button")return window.location.href=el.innerHTML.toLowerCase().replace(/\s/g,"-")+".html";
 var indx=Array.from(el.parentElement.children).indexOf(el);
 if(el.tagName.toLowerCase()=="li"&&navlinks.length>indx&&navlinks[indx]!=null)window.location.href=navlinks[indx];
+*/
 }
-window.onload=()=>setTimeout(()=>document.body.style.opacity=1,500);
+window.onload=()=>setTimeout(()=>document.body.removeAttribute("style"),500);
 </script>
 </head>
-<body style="opacity:0;">
+<body style="opacity:0;pointer-events:none;">
 <header>
 <h1>aids</h1>
 <button id="navbtn">&equiv;</button>
@@ -42,7 +45,7 @@ window.onload=()=>setTimeout(()=>document.body.style.opacity=1,500);
 <button onclick="nav(this);">Despacito</button>
 <button onclick="nav(this);">About</button>
 <ul id="navmenu" onclick="nav(event.target)">
-<li>&larr;</li>
+<li id="navbackbtn">&larr;</li>
 <li>Home</li>
 <li>Despacito</li>
 <li>About</li>
